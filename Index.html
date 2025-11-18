@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão RGB Neon</title>
+    <style>
+        /* Configuração básica da página para garantir centralização e fundo escuro */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #050505; /* Fundo quase preto */
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+
+        /* Estilo base do botão */
+        .rgb-button {
+            position: relative;
+            padding: 20px 50px;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            background: #1e1e1e; /* Cor do botão */
+            border-radius: 50px; /* Arredondamento */
+            z-index: 1;
+            transition: 0.3s;
+            /* Impede seleção de texto ao tocar */
+            user-select: none; 
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Efeito ao passar o mouse ou tocar */
+        .rgb-button:hover {
+            color: #fff;
+            background: #000;
+        }
+
+        /* O brilho RGB atrás do botão (Pseudo-elemento 1: Blur) */
+        .rgb-button::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, 
+                #ff0000, #ff7300, #fffb00, #48ff00, 
+                #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            background-size: 400%;
+            border-radius: 60px;
+            z-index: -1;
+            filter: blur(20px); /* O desfoque que cria o efeito "neon" */
+            animation: glowing 20s linear infinite;
+        }
+
+        /* A borda RGB sólida (Pseudo-elemento 2: Borda nítida) */
+        .rgb-button::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                #ff0000, #ff7300, #fffb00, #48ff00, 
+                #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            background-size: 400%;
+            border-radius: 60px;
+            z-index: -1;
+            animation: glowing 20s linear infinite;
+        }
+
+        /* Animação que move as cores */
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- O Botão Centralizado -->
+    <a href="https://pin.it/75Ez8i8Qm" class="rgb-button" target="_blank">
+        CLIQUE AQUI
+    </a>
+
+</body>
+</html>
+
+
